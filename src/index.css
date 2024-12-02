@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@1,9..40,100..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
+@tailwind components;
+@tailwind utilities;
+
+*,
+#root {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+.desc {
+  line-height: inherit;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+.heic {
+  height: -webkit-fill-available;
+}
+.material-symbols-outlined {
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
+}
+.cards:hover {
+  scale: 1.007;
+}
+
+.title::after {
+  content: "";
+  position: absolute;
+  background-color: #f5520067;
+  height: 12px;
+  left: -5px;
+  right: -5px;
+  bottom: 0px;
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  border-left: 3px solid #edecf0;
+  height: 48px;
+  width: 12px;
+  bottom: -120%;
+  right: 15%;
+}
+
+/* Modal */
+
+.overflow-hidden {
+  overflow: hidden;
+}
+.modalContainer {
+  width: 50%;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 8px;
+}
+.bt{
+  transform: translateX(50%);
+}
+.modifyContainer {
+  width: 90%;
+  position: absolute;
+top : 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: #ffffff;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 8px;
+}
+.bckd {
+  backdrop-filter: blur(2px);
+}
+
+.closeBtn {
+  position: fixed;
+  top: 8px;
+  right: 8px;
+}
+
+@media (max-width: 989px) {
+  .link::after {
+    content: "";
+    position: absolute;
+    border-top: 3px solid #edecf0;
+    border-left: none;
+    height: 48px;
+    width: 116px;
+    bottom: -29px;
+    left: 100%;
+  }
+}
+.setting::after {
+  content: "";
+  position: absolute;
+  background-color: #004e98;
+  
+  height: 100%;
+  width: 5px;
+  left: 0px;
+  top:0px;
+  
+}
+
+@layer components {
+  .btn {
+    @apply cursor-pointer px-5 py-2 rounded-full border-none;
+  }
+  .input {
+    @apply bg-grey h-10 p-3 rounded-md outline-none border-transparent border-solid focus:border-greyActive;
+  }
+  .inputpub {
+    @apply bg-grey h-10 p-3 rounded-md outline-none border-transparent border-solid focus:border-greyActive text-base;
+  }
+  .icon {
+    @apply absolute left-2 top-[25%];
+  }
+}
